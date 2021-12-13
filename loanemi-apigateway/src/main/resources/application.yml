@@ -1,0 +1,14 @@
+server:
+  port: 2222
+spring:
+  application:
+    name: loanemi-api-gateway
+zuul:
+  prefix: /api
+  routes:
+    emi:
+      path: /emiapi/**
+      service-id: emiapi
+    loan:
+      path: /loanapi/**
+      service-id: loan-api
